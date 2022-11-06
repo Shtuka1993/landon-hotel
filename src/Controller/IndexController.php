@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Psr\Log\LoggerInterface;
 use App\Service\RandomNumberGenerator;
 use App\Service\DateService;
+use App\Service\DateCalculator;
 
 class IndexController extends AbstractController
 {
@@ -15,10 +16,10 @@ class IndexController extends AbstractController
     /**
     * @Route("/")
     */
-    public function home(LoggerInterface $logger, DateService $dateService)
+    public function home(LoggerInterface $logger, DateCalculator $dateCalculator)
     {
         $logger->info('Homepage loaded.');
-        $year = $dateService->getYears(self::HOTEL_OPENED);
+        $year = $dateCalculator->yearsDifference(self::HOTEL_OPENED);
         $images = [
             [
                 'url' => "images/hotel/intro_room.jpg",
