@@ -19,6 +19,11 @@ class IndexController extends AbstractController
             'index.html.twig',
             [
                 'year' => $year,
+                'image1' => "images/hotel/intro_room.jpg",
+                'image2' => "images/hotel/intro_pool.jpg",
+                'image3' => "images/hotel/intro_dining.jpg",
+                'image4' => "images/hotel/intro_attractions.jpg",
+                'image5' => "images/hotel/intro_wedding.jpg",
             ]
         );
     }
