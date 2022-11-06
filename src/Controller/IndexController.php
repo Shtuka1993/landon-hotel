@@ -6,16 +6,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Psr\Log\LoggerInterface;
+use App\Service\RandomNumberGenerator;
 
 class IndexController extends AbstractController
 {
     /**
     * @Route("/")
     */
-    public function home(LoggerInterface $logger)
+    public function home(LoggerInterface $logger, RandomNumberGenerator $randomNumberGenerator)
     {
         $logger->info('Homepage loaded.');
-        $year = random_int(1,100);
+        $year = $randomNumberGenerator->getRandomNumber();
         $images = [
             [
                 'url' => "images/hotel/intro_room.jpg",
