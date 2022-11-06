@@ -7,16 +7,18 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Psr\Log\LoggerInterface;
 use App\Service\RandomNumberGenerator;
+use App\Service\DateService;
 
 class IndexController extends AbstractController
 {
+    private const HOTEL_OPENED = 1969;
     /**
     * @Route("/")
     */
-    public function home(LoggerInterface $logger, RandomNumberGenerator $randomNumberGenerator)
+    public function home(LoggerInterface $logger, DateService $dateService)
     {
         $logger->info('Homepage loaded.');
-        $year = $randomNumberGenerator->getRandomNumber();
+        $year = $dateService->getYears(self::HOTEL_OPENED);
         $images = [
             [
                 'url' => "images/hotel/intro_room.jpg",
