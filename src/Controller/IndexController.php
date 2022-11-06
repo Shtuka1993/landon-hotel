@@ -15,15 +15,34 @@ class IndexController extends AbstractController
     {
         $year = random_int(1,100);
 
+        $images = [
+            [
+                'url' => "images/hotel/intro_room.jpg",
+                'class' => "",
+            ],
+            [
+                'url' => "images/hotel/intro_pool.jpg",
+                'class' => "",
+            ],
+            [
+                'url' => "images/hotel/intro_dining.jpg",
+                'class' => "",
+            ],
+            [
+                'url' => "images/hotel/intro_attractions.jpg",
+                'class' => "",
+            ],
+            [
+                'url' => "images/hotel/intro_wedding.jpg",
+                'class' => "hidesm",
+            ],
+        ];
+
         return $this->render(
             'index.html.twig',
             [
                 'year' => $year,
-                'image1' => "images/hotel/intro_room.jpg",
-                'image2' => "images/hotel/intro_pool.jpg",
-                'image3' => "images/hotel/intro_dining.jpg",
-                'image4' => "images/hotel/intro_attractions.jpg",
-                'image5' => "images/hotel/intro_wedding.jpg",
+                'images' => $images,
             ]
         );
     }
