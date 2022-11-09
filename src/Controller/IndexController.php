@@ -9,6 +9,7 @@ use Psr\Log\LoggerInterface;
 use App\Service\RandomNumberGenerator;
 use App\Service\DateService;
 use App\Service\DateCalculator;
+use App\Entity\Hotel;
 
 class IndexController extends AbstractController
 {
@@ -20,6 +21,9 @@ class IndexController extends AbstractController
     {
         $logger->info('Homepage loaded.');
         $year = $dateCalculator->yearsDifference(self::HOTEL_OPENED);
+        $hotels = $this->getDoctrine()
+            ->getRepository(Hotel::class)
+            ->findAll();
         $images = [
             [
                 'url' => "images/hotel/intro_room.jpg",
@@ -48,6 +52,7 @@ class IndexController extends AbstractController
             [
                 'year' => $year,
                 'images' => $images,
+                'hotels' => $hotels
             ]
         );
     }
