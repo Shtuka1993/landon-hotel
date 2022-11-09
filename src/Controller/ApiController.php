@@ -17,7 +17,7 @@
                 ->findAll();
             
                 return $this->json([
-                    'hotels' => $hotels
+                    'hotels' => $hotels,
                 ]);
         }
     }

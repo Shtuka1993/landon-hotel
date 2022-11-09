@@ -14,7 +14,7 @@ class TokenSubscriber implements EventSubscriberInterface {
     public function __construct() {
         $this->tokens = [
             'user1' => 'token1',
-            'user2' => 'token2'
+            'user2' => 'token2',
         ];
     }
 
@@ -30,7 +30,7 @@ class TokenSubscriber implements EventSubscriberInterface {
 
     public static function getSubscribedEvents() {
         return [
-            KernelEvents::CONTROLLER => 'beforeController'
+            KernelEvents::CONTROLLER => 'beforeController',
         ];
     }
 }

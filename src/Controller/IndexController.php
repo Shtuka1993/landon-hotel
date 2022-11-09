@@ -52,7 +52,7 @@ class IndexController extends AbstractController
             [
                 'year' => $year,
                 'images' => $images,
-                'hotels' => $hotels
+                'hotels' => $hotels,
             ]
         );
     }
