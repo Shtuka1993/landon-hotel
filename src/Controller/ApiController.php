@@ -7,7 +7,7 @@
     use Symfony\Component\Routing\Annotation\Route;
     use App\Entity\Hotel;
 
-    class ApiController extends AbstractController {
+    class ApiController extends AbstractController implements TokenAuthenticatedController {
         /**
          * @Route("/api/rooms")
          */
