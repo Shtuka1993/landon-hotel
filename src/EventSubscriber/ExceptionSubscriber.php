@@ -24,7 +24,7 @@ class ExceptionSubscriber implements EventSubscriberInterface {
 
     public static function getSubscribedEvents() {
         return [
-            KernelEvents::EXCEPTION => 'onException'
+            KernelEvents::EXCEPTION => 'onException',
         ];
     }
 }
