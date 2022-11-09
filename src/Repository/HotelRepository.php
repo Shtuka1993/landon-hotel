@@ -23,7 +23,7 @@ class HotelRepository extends ServiceEntityRepository
         
         /*return $this->createQueryBuilder('h')
         ->andWhere('h.price < :price')
-        ->setPArameter('price', $price)
+        ->setParameter('price', $price)
         ->orderBy('h.id', 'ASC')
         ->setMaxResults(10)
         ->getQuery()
